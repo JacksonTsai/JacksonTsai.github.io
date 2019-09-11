@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pwa-demo';
+  constructor() {
+    window.addEventListener('appinstalled', (evt) => {
+      console.log('a2hs installed');
+    });
+  }
+
 }
