@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SwPush } from '@angular/service-worker';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+export interface Item {
+  error: boolean;
+  data: string;
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,14 +13,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'pwa-demo';
-  constructor() {
-    window.addEventListener('appinstalled', (evt) => {
-      console.log('a2hs installed');
+  public tasks: AngularFirestoreCollection<Item>;
+  private ItemCollection: AngularFirestoreCollection<Item>;
+  items: Observable<Item>;
+  readonly VAPID_PUBLIC_KEY =
+    'BA7qHqj9hLbQ5XqZJI6xhio7XRe9jfP4E3Btlwj37LLtTyiHOhtefTElwy8z5AZkEYNnJjYsJjjnmYH8PRlwoxs';
+
+  constructor(private swPush: SwPush, private db: AngularFirestore) {
+    this.tasks = db.collection<Item>('moxa');
+  }
+  ngOnInit() {
+    console.log('welcome Oninit!');
+    this.tasks.snapshotChanges().subscribe(value => {
+      console.log(value);
     });
   }
-  ngOnInit(){
-    window.addEventListener('appinstalled', (evt) => {
-      console.log('a2hs installed');
-    });
-  }
+
 }
