@@ -4,13 +4,14 @@ import {
   AngularFirestore,
   AngularFirestoreCollection
 } from '@angular/fire/firestore';
-import { Observable, pipe } from 'rxjs';
+import { Observable, pipe, Subscription, Subscribable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PushNotificationOptions, PushNotificationService } from 'ngx-push-notifications';
 export interface Item {
   error: boolean;
   data: string;
 }
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,9 +27,22 @@ export class AppComponent implements OnInit {
   // readonly VAPID_PUBLIC_KEY =
   //   'BA7qHqj9hLbQ5XqZJI6xhio7XRe9jfP4E3Btlwj37LLtTyiHOhtefTElwy8z5AZkEYNnJjYsJjjnmYH8PRlwoxs';
   firebaseData$;
+  config;
+  fullpage_api;
 
   constructor(private swPush: SwPush, private db: AngularFirestore, private pushNotificationService: PushNotificationService) {
     this.tasks = db.collection<Item[]>('moxa');
+
+    this.config = {
+      licenseKey: 'YOUR LICENSE KEY HERE',
+      sectionsColor: ['#008787', '#179191', '#2e9c9c', '#45a7a7', '#5cb2b2', '#73bdbd', '#8bc8c8', '#a2d3d3',
+      '#a2d3d3', '#8bc8c8', '#73bdbd', '#5cb2b2', '#45a7a7', '#2e9c9c', '#179191', '#008787', '#008787', '#008787', '#008787', '#008787'],
+      anchors: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10'],
+      navigation: true,
+    };
+  }
+  getRef(fullPageRef) {
+    this.fullpage_api = fullPageRef;
   }
   ngOnInit() {
 
@@ -36,8 +50,7 @@ export class AppComponent implements OnInit {
     console.log('welcome Oninit!');
     this.firebaseData$ = this.tasks
       .snapshotChanges()
-      .pipe(map(data =>
-          data.map(v => v.payload.doc.data())));
+      .pipe(map(data => data.map(v => v.payload.doc.data())));
     this.firebaseData$.subscribe(value => {
       if(value[0].error){
       this.subscribeToNotifications(value);

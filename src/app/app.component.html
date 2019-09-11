@@ -1,21 +1,187 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!!!!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div fullpage id="fullpage2" [options]="config" (ref)="getRef($event)">
+  <div class="section">
+    <h1 class="subject">Enhance UX with Progressive Web App</h1>
+    <h2 class="speaker">Jackson / Zack</h2>
+  </div>
+  <div class="section page">
 
-<router-outlet></router-outlet>
+    <h1 class="title">What is Progressive Web App</h1>
+
+    <div class="content">
+      Progressive Web Apps are websites. Look and feel like an app,
+      users will browse Progressive Web Apps on their browser with an URL just like they do any
+      website, but right after they land on the PWA, they get the experience of using an “app”, right on their
+      browser, without the need to
+      download and install.
+
+    </div>
+  </div>
+  <div class="section">
+    <div class="slide">
+      <div class="title">
+        <img src="assets/images/1.png" alt="">
+      </div>
+      <h1 class="title"> Reliable </h1>
+      <div class="content center">Load instantly and never show the downasaur,
+        even in uncertain network conditions.
+      </div>
+
+    </div>
+    <div class="slide">
+      <div class="title">
+        <img src="assets/images/2.png" alt=""></div>
+      <h1 class="title"> Fast </h1>
+      <div class="content center">
+        Respond quickly to user interactions with silky
+        smooth animations and no janky scrolling.
+      </div>
+
+    </div>
+    <div class="slide">
+      <div class="title">
+        <img src="assets/images/3.png" alt="">
+      </div>
+      <h1 class="title"> Engaging </h1>
+      <div class="content center">
+        Feel like a natural app on the device,
+        with an immersive user experience.
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <h1 class="title">Why build a PWA</h1>
+    <div class="content center df-center-end">
+      <div class="sub-content">
+        <img src="assets/images/4.png" width="120px" alt="">
+        <div>Icon OnHome Screen</div>
+      </div>
+      <div class="sub-content">
+        <img src="assets/images/5.png" width="120px" alt="">
+        <div>Faster Page Load </div>
+      </div>
+      <div class="sub-content">
+        <img src="assets/images/6.png" width="120px" alt="">
+        <div>Offline Mode </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <h1 class="title">Why build a PWA</h1>
+    <div class="content center df-center-end">
+      <div class="sub-content">
+        <img src="assets/images/7.png" width="250px" alt="">
+        <div>Like App </div>
+      </div>
+      <div class="sub-content">
+        <img src="assets/images/8.png" width="120px" alt="">
+        <div>Notifications</div>
+      </div>
+      <div class="sub-content">
+        <img src="assets/images/9.png" width="120px" alt="">
+        <div>Background Sync </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="section">
+    <h1 class="title">PWA Core </h1>
+    <div class="content ">
+      <div class=" df-center-center">
+        <img class="sub-content" src="assets/images/10.png" width="250px" alt="">
+        <div>Web App Manifest <br>
+          - icon<br>
+          - welcome page<br>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="section">
+    <h1 class="title">PWA Core </h1>
+    <div class="content ">
+
+      <div class=" df-center-center">
+        <img class="sub-content" src="assets/images/11.png" width="250px" alt="">
+        <div>Service Workers <br>
+          - cache only<br>
+          - network only<br>
+          - cache falling back to network<br>
+          - network falling back to cache<br>
+          - cache then network<br>
+          - Cache and network race<br>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="section">
+    <div class="content center">
+      <h1 class="title">Service Workers</h1>
+      <h1 class="content center">cache only</h1>
+      <img src="assets/images/12.png" alt="">
+    </div>
+  </div>
+  <div class="section">
+    <div class="content center">
+      <h1 class="title">Service Workers</h1>
+      <h1 class="content center">network only</h1>
+
+      <img src="assets/images/13.png" alt="">
+    </div>
+
+  </div>
+  <div class="section">
+    <div class="content center">
+      <h1 class="title">Service Workers</h1>
+      <h1 class="content center">cache falling back to network </h1>
+      <img src="assets/images/14.png" alt="">
+    </div>
+
+  </div>
+  <div class="section">
+    <div class="content center">
+      <h1 class="title">Service Workers</h1>
+      <h1 class="content center">network falling back to cache</h1>
+      <img src="assets/images/15.png" alt="">
+    </div>
+
+  </div>
+  <div class="section">
+    <div class="content center">
+      <h1 class="title">Service Workers</h1>
+      <h1 class="content center">cache then network</h1>
+      <img src="assets/images/16.png" alt="">
+    </div>
+
+  </div>
+  <div class="section">
+    <div class="content center">
+      <h1 class="title">Service Workers</h1>
+      <h1 class="content center">cache and network race</h1>
+      <img src="assets/images/17.png" alt="">
+    </div>
+
+  </div>
+  <div class="section">
+    <div class="content center">
+        <h1 class="title">Service Workers</h1>
+        <h1 class="content center">cache APIs support</h1>
+      <img src="assets/images/18.png" alt="">
+    </div>
+
+  </div>
+  <div class="section">
+    <div class="content center">
+      <h1 class="title">Service Workers</h1>
+      <h1 class="content center">Push Notification Supportt</h1>
+      <img src="assets/images/19.png" alt="">
+
+    </div>
+  </div>
+  <div class="section">
+      <h1 class="subject">DEMO</h1>
+    </div>
+</div>
