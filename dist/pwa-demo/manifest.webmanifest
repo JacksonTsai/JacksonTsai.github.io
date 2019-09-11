@@ -6,6 +6,7 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/?utm_source=homescreen",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "assets/icons/MoxaIcon.png",
