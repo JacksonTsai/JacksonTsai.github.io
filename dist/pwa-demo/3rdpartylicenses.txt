@@ -302,6 +302,9 @@ firebase/firestore
 
 firebase/storage
 
+ngx-push-notifications
+MIT
+
 rxjs
 Apache-2.0
                                Apache License
