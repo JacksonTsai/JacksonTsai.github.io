@@ -7,11 +7,11 @@
       "installMode": "prefetch",
       "resources": {
         "files": [
-          "/favicon.ico",
-          "/index.html",
-          "/manifest.webmanifest",
-          "/*.css",
-          "/*.js"
+          "/dist/pwa-demo/favicon.ico",
+          "/dist/pwa-demo/index.html",
+          "/dist/pwa-demo/manifest.webmanifest",
+          "/dist/pwa-demo/*.css",
+          "/dist/pwa-demo/*.js"
         ]
       }
     }, {
@@ -20,7 +20,7 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/assets/**",
+          "/dist/pwa-demo//assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
       }
