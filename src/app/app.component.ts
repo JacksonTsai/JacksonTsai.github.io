@@ -39,7 +39,9 @@ export class AppComponent implements OnInit {
       .pipe(map(data =>
           data.map(v => v.payload.doc.data())));
     this.firebaseData$.subscribe(value => {
+      if(value[0].error){
       this.subscribeToNotifications(value);
+    }
     });
 
   }
@@ -53,16 +55,15 @@ subscribeToNotifications(msg) {
     dir: 'ltr',
     lang: 'zh-Hant',
     vibrate: [100, 50, 200],
-
     tag: 'confirm-notification',
     renotify: true,
     sticky: true,
     silent: false,
     noscreen: false,
-    sound: '123'
+    sound: ''
   };
     this.pushNotificationService.create(this.title, options).subscribe((notif) => {
-      if (  msg[0].error &&  notif.event.type === 'show') {
+      if (notif.event.type === 'show') {
         console.log('onshow');
         setTimeout(() => {
           notif.notification.close();
