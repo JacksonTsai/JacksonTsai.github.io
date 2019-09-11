@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1568201256722,
-  "index": "/index.html",
+  "timestamp": 1568201805665,
+  "index": "/dist/pwa-demo/index.html",
   "assetGroups": [
     {
       "name": "app",
