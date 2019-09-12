@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
       licenseKey: 'YOUR LICENSE KEY HERE',
       sectionsColor: ['#008787', '#179191', '#2e9c9c', '#45a7a7', '#5cb2b2', '#73bdbd', '#8bc8c8', '#a2d3d3',
       '#a2d3d3', '#8bc8c8', '#73bdbd', '#5cb2b2', '#45a7a7', '#2e9c9c', '#179191', '#008787', '#008787', '#008787', '#008787', '#008787'],
-      anchors: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10'],
+      anchors: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10', 'p11', 'p12', 'p13', 'p14', 'p15', 'p16', 'p17', 'p18', 'p19'],
       navigation: true,
     };
   }
